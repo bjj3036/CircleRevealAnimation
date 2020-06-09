@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.btn_start_activity).setOnClickListener(v -> {
             startActivity(new Intent(this, CircleRevealActivity.class));
-            overridePendingTransition(0, 0);
+            overridePendingTransition(0, 0); // Activity가 시작될 때 애니메이션 없이 그냥 고정으로 나타남
         });
     }
 }

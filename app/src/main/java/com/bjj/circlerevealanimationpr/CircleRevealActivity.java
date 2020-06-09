@@ -24,7 +24,9 @@ public class CircleRevealActivity extends AppCompatActivity {
         mLayoutRoot.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
+                // 뷰가 그려질 위치가 정해졌으면 Animation을 시작하고
                 showCircleReveal();
+                // 한 번만 동작할 것이기 때문에 Listener Remove
                 mLayoutRoot.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
@@ -74,6 +76,7 @@ public class CircleRevealActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        // 끝날 때도 Animation
         hideCircleReveal();
     }
 }
